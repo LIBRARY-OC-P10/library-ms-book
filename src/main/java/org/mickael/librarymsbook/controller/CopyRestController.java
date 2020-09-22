@@ -136,5 +136,11 @@ public class CopyRestController {
         return number;
     }
 
+    @GetMapping("/exist-number/book/{bookId}")
+    public Integer numberOfCopyForBook(@PathVariable Integer bookId){
+        Integer number = copyServiceContract.getNumberOfCopiesForOneBook(bookId);
+        return number;
+    }
+
 
 }

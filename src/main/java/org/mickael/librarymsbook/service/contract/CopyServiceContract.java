@@ -28,4 +28,6 @@ public interface CopyServiceContract {
     void updateAvailableCopy(Integer id) throws CopyNotFoundException;
 
     Integer getNumberOfAvailableCopiesForOneBook(Integer bookId);
+    Integer getNumberOfCopiesForOneBook(Integer bookId);
+
 }
