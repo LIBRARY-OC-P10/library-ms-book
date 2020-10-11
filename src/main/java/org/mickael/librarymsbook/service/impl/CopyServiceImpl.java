@@ -111,7 +111,6 @@ public class CopyServiceImpl implements CopyServiceContract {
         }
         Copy copy = optionalCopy.get();
         if (copy.isAvailable()){
-            System.out.println(copy.isAvailable());
             copy.setAvailable(false);
         } else {
             copy.setAvailable(true);
@@ -121,6 +120,11 @@ public class CopyServiceImpl implements CopyServiceContract {
 
     @Override
     public Integer getNumberOfAvailableCopiesForOneBook(Integer bookId) {
+        return copyRepository.findAllCopiesAvailabeForOneBook(bookId);
+    }
+
+    @Override
+    public Integer getNumberOfCopiesForOneBook(Integer bookId) {
         return copyRepository.findAllCopiesForOneBook(bookId);
     }
 
